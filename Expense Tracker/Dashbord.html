@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="Dashbord.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon">💰</div>
+            <h1>Balance Book</h1>
+            <p>Track your income and expenses with smart budgeting</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">Total Income</div>
+                <div class="stat-value" id="totalIncome">$0.00</div>
+                <div class="stat-change positive" id="incomeChange">+0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Total Expenses</div>
+                <div class="stat-value" id="totalExpenses">$0.00</div>
+                <div class="stat-change negative" id="expenseChange">+0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Net Balance</div>
+                <div class="stat-value" id="netBalance">$0.00</div>
+                <div class="stat-change" id="balanceChange">0%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Budget Remaining</div>
+                <div class="stat-value" id="budgetRemaining">$0.00</div>
+                <div class="stat-change" id="budgetChange">0%</div>
+            </div>
+        </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <h3 class="section-title">💡 Monthly Budget</h3>
+            <div class="budget-input-group">
+                <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                    <label for="budgetAmount">Set Budget Amount</label>
+                    <input type="number" id="budgetAmount" placeholder="Enter budget amount" step="0.01">
+                </div>
+                <button class="btn" onclick="setBudget()">Set Budget</button>
+            </div>
+            <div class="budget-progress">
+                <div class="budget-progress-bar" id="budgetProgressBar"></div>
+            </div>
+            <div class="budget-info">
+                <span>Spent: <span id="budgetSpent">$0.00</span></span>
+                <span>Budget: <span id="budgetTotal">$0.00</span></span>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-section">
+            <div class="filter-row">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filterType">Filter by Type</label>
+                    <select id="filterType" onchange="filterTransactions()">
+                        <option value="all">All Transactions</option>
+                        <option value="income">Income Only</option>
+                        <option value="expense">Expenses Only</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filterCategory">Filter by Category</label>
+                    <select id="filterCategory" onchange="filterTransactions()">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filterDate">Filter by Date</label>
+                    <input type="date" id="filterDate" onchange="filterTransactions()">
+                </div>
+                <button class="btn" onclick="clearFilters()">Clear</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Add Transaction Form -->
+            <div class="form-section">
+                <h3 class="section-title">➕ Add Transaction</h3>
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="Enter description" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type</label>
+                            <select id="type" required onchange="updateCategoryOptions()">
+                                <option value="">Select Type</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Add Transaction</button>
+                </form>
+            </div>
+
+            <!-- Transaction List -->
+            <div class="list-section">
+                <h3 class="section-title">📊 Recent Transactions</h3>
+                <div id="transactionList">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📝</div>
+                        <p>No transactions yet. Add your first transaction to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Breakdown Chart -->
+        <div class="chart-section">
+            <h3 class="section-title">📈 Spending by Category</h3>
+            <div class="category-chart" id="categoryChart">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📊</div>
+                    <p>Add some expenses to see category breakdown</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+    <script src="Dashbord.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Expense Tracker</title>
+    <link rel="stylesheet" href="Sign up.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">💰</div>
+            <h1>Join Balance Book</h1>
+            <p>Create your account and start tracking today</p>
+        </div>
+        
+        <div class="form">
+            <form id="signUpForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName"> Name</label>
+                        <input type="text" id="tName" placeholder="John" required>
+                        <div class="error-message" id="NameError"></div>
+                    </div>
+
+                    
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="john.doe@example.com" required>
+                    <div class="error-message" id="signupEmailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="signupPassword" placeholder="Create a secure password" required>
+                        <span class="password-toggle" onclick="togglePassword('signupPassword')">👁️</span>
+                    </div>
+                    <div class="password-strength" id="passwordStrength" style="display: none;">
+                        <div class="strength-bars">
+                            <div class="strength-bar" id="bar1"></div>
+                            <div class="strength-bar" id="bar2"></div>
+                            <div class="strength-bar" id="bar3"></div>
+                            <div class="strength-bar" id="bar4"></div>
+                        </div>
+                        <div class="strength-text" id="strengthText">Password strength</div>
+                    </div>
+                    <div class="error-message" id="signupPasswordError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        <span class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</span>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+
+            
+
+                <button type="submit" class="btn" id="signupBtn">Create Account</button>
+                
+                <div class="switch-form">
+                    Already have an account? <a href="Login.html" onclick="goToLogin()">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="success-message" id="successMessage"></div>
+    
+    <!-- Demo info -->
+    <div class="demo-info" onclick="fillDemoData()">
+        <h4>Quick Demo Fill</h4>
+        <p>Click to auto-fill with demo data!</p>
+    </div>
+    <script src="Sign up .js"></script>
+
+</body>
+</html>

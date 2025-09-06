@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Expense Tracker</title>
+    <link rel="stylesheet" href="Login.css">
+
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="back-to-home" onclick="goToHome()">← Back to Home</a>
+        
+        <div class="header">
+            <div class="header-icon">💰</div>
+            <h1>Welcome Back</h1>
+            <p>Sign in to your Balance Book</p>
+        </div>
+        
+        <div class="form">
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john.doe@example.com" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <span class="password-toggle" onclick="togglePassword('password')">👁️</span>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password" onclick="forgotPassword()">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn" id="signinBtn">Sign In</button>
+                
+                <div class="divider">
+                    <span>or sign in with</span>
+                </div>
+                
+                
+                
+                <div class="switch-form">
+                    Don't have an account? <a href="Sign up.html" onclick="goToSignUp()">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="success-message" id="successMessage"></div>
+    
+    <!-- Demo credentials info -->
+    <div class="demo-info">
+        <h4>Demo Login:</h4>
+        <p><strong>Email:</strong> demo@tracker.com</p>
+        <p><strong>Password:</strong> demo123</p>
+        <p>Click to auto-fill credentials!</p>
+    </div>
+    <script src="Login.js"></script>
+</body>
+</body>
+</html>
