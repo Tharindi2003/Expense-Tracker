@@ -1,43 +1,43 @@
- Expense Tracker
+💰 Expense Tracker
 
-A lightweight browser-based web application to track personal income and expenses. Built with HTML, CSS, and JavaScript, it works entirely offline using LocalStorage—no server required.
+A lightweight browser-based web application to track personal income and expenses. Built with HTML, CSS, and JavaScript, it works entirely offline using LocalStorage — no server required.
 
-Features
+✨ Features
 
-Add, edit, and delete income/expense transactions
+➕ Add, ✏️ edit, and 🗑️ delete income/expense transactions
 
-Categorize transactions (default + custom categories)
+🏷️ Categorize transactions (default + custom categories)
 
-Set and track monthly budgets
+🎯 Set and track monthly budgets
 
-View summaries: total income, expenses, balance, remaining budget
+📊 View summaries: total income, expenses, balance, remaining budget
 
-Filter by type, category, month, or keyword
+🔍 Filter by type, category, month, or keyword
 
-Import/Export data in JSON format for backup/sharing
+📂 Import/Export data in JSON format for backup/sharing
 
-Tech & Environment
+🛠️ Tech & Environment
 
-Runs on modern browsers (Chrome, Firefox, Safari, Edge)
+🌐 Runs on modern browsers (Chrome, Firefox, Safari, Edge)
 
-Works on desktop and mobile
+💻 Works on desktop and 📱 mobile
 
-Offline-first (no internet connection needed)
+📴 Offline-first (no internet connection needed)
 
-Constraints
+⚠️ Constraints
 
-Data is stored locally in the browser (cleared if storage is deleted)
+🗄️ Data is stored locally in the browser (cleared if storage is deleted)
 
-Import/Export supports JSON only
+📑 Import/Export supports JSON only
 
-No multi-user or server sync
+👤 No multi-user or server sync
 
-Future Enhancements
+🔮 Future Enhancements
 
-Cloud sync and multi-user support
+☁️ Cloud sync and multi-user support
 
-Charts and visual analytics
+📈 Charts and visual analytics
 
-Multi-currency support
+💱 Multi-currency support
 
-Recurring transactions
+🔁 Recurring transactions
